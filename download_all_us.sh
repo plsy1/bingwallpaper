@@ -1,15 +1,18 @@
-#!/bin/bash
+#!/bin/zsh
 
 
+cd /Users/y1/Pictures/wallpaper/bingwallpaper
 
-mkdir -p bing_wallpapers
+curl -O https://raw.githubusercontent.com/niumoo/bing-wallpaper/main/bing-wallpaper.md
 
-find bing_wallpapers -type f -size 0 -delete
+mkdir -p bing_wallpapers_us
+
+find bing_wallpapers_us -type f -size 0 -delete
 
 while read -r line; do
     date=$(echo "$line" | cut -d '|' -f 1 | tr -d ' ')
     filename="${date//[^0-9-]}.jpg"
-    filepath="bing_wallpapers/$filename"
+    filepath="bing_wallpapers_us/$filename"
     if [ -f "$filepath" ]; then
         echo "Skipping $filename as it already exists."
     else
