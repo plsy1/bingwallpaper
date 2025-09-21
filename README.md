@@ -17,7 +17,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## **使用说明
+## 使用说明
 
 ```bash
 usage: bing.py [-h] [-l LANG] [-u]
